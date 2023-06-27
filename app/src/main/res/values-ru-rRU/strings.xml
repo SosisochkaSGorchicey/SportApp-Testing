@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SportApp</string>
+    <string name="main_screen_header">Завершенные сегодня матчи по всему миру!</string>
+    <string name="main_screen_first_desc">команда 1</string>
+    <string name="main_screen_second_desc">команда 2</string>
+    <string name="main_screen_details_close">посмотреть детали</string>
+    <string name="main_screen_details_open">скрыть детали</string>
+    <string name="main_screen_quarter">Четверть</string>
+    <string name="error_not_found">Не найдено</string>
+    <string name="button_see_website">Перейти на сайт</string>
+    <string name="button_go_back">Назад</string>
+    <string name="no_data">Пока не было матчей!</string>
+</resources>

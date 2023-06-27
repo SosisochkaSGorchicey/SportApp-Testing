@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SportApp</string>
+    <string name="main_screen_header">Matches completed today all over the world!</string>
+    <string name="main_screen_vs_desc" translatable="false">versus</string>
+    <string name="main_screen_second_desc">team 2</string>
+    <string name="main_screen_details_close">see details</string>
+    <string name="main_screen_details_open">hide details</string>
+    <string name="main_screen_quarter">Quarter</string>
+    <string name="error_not_found">Not found</string>
+    <string name="button_see_website">See website</string>
+    <string name="button_go_back">Go back</string>
+    <string name="main_screen_first_desc">team 1</string>
+    <string name="no_data">No mathces yet!</string>
+</resources>
