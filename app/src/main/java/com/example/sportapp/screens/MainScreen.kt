@@ -78,7 +78,7 @@ fun MainScreen(navController: NavController, viewModel: MainViewModel) {
     val state = rememberPullRefreshState(refreshing, ::refresh)
 
     // Main data for ui
-    val dataList = rememberSaveable {
+    val dataList = remember {
         mutableStateOf(listOf<Result>())
     }
 

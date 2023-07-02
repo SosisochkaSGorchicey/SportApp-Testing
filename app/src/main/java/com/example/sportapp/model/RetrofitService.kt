@@ -11,8 +11,9 @@ private const val MY_KEY = "a2e5bd194dc1dd494dff762bea2a363f6f410939247a665b6ced
 
 interface RetrofitService {
 
-    @GET("?met=Fixtures")
+    @GET("basketball")
     suspend fun getData(
+        @Query("met") met: String = "Fixtures",
         @Query("APIkey") APIkey: String = MY_KEY,
         @Query("from") from: String,
         @Query("to") to: String,
@@ -25,12 +26,15 @@ interface RetrofitService {
         fun getInstance(): RetrofitService {
             if (retrofitService == null) {
                 val retrofit = Retrofit.Builder()
-                    .baseUrl("https://apiv2.allsportsapi.com/basketball/")
+                    .baseUrl("https://apiv2.allsportsapi.com/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 retrofitService = retrofit.create(RetrofitService::class.java)
+                return retrofitService as RetrofitService
+            } else {
+                return retrofitService as RetrofitService
             }
-            return retrofitService!!
+
         }
 
     }

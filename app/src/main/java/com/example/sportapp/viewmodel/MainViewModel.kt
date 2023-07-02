@@ -11,6 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -54,12 +55,14 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
         job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
 
             val response = mainRepository.getData(date)
-            //Log.v("responseFromApi", response.toString())
+            Log.v("responseFromApi", response.toString())
 
             if (response.isSuccessful) {
-                errorMessageForDisplay.postValue("")
-                data.postValue(response.body())
-                loading.postValue(false)
+                withContext(Dispatchers.Main) {
+                    errorMessageForDisplay.value = ""
+                    data.value = response.body()
+                    loading.value = false
+                }
             } else {
                 onError("Error : ${response.message()} ")
             }
